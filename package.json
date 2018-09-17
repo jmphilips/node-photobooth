@@ -1,0 +1,17 @@
+{
+  "name": "picam",
+  "version": "1.0.0",
+  "description": "A JavaScript run raspberry pi photo booth.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js"
+  },
+  "author": "Joshua Philips",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
+  }
+}

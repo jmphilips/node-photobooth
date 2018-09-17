@@ -1,0 +1,17 @@
+extends partials/layout.pug
+
+block content
+  .container
+    h1 Please type in your phone number
+  .container
+    .login-form
+      form(method='POST')
+        .form-group
+          input.form-control(
+            type='phone'
+            name='phone'
+            placeholder='(***) ***-****'
+            required
+          )
+        .contact-form__submit
+          input.btn.btn-success.btn-lg(type='submit' value='Start Show')
