@@ -2,16 +2,50 @@ extends partials/layout.pug
 
 block content
   .container
-    h1 Please type in your phone number
+    h1#heading Please type in your phone number
   .container
-    .login-form
-      form(method='POST')
-        .form-group
-          input.form-control(
-            type='phone'
-            name='phone'
-            placeholder='(***) ***-****'
-            required
-          )
-        .contact-form__submit
-          input.btn.btn-success.btn-lg(type='submit' value='Start Show')
+    .container
+      .login-form
+        form(method='POST')
+          .row
+            .col-6.offset-1
+              .form-group
+                input#phone-input.form-control(
+                  type='tel'
+                  name='phone'
+                  placeholder='(***) ***-****'
+                  required
+                )
+            .col-3.offset-1
+              .contact-form__submit
+                input.btn.btn-lg.btn-primary(type='submit' value='Start Photos')
+    .container
+      .row.padded-row
+        .col-2.offset-1
+          input.btn.btn-large.custom-large.btn-secondary(type='button' onClick="appendNumber(1)", value="1")
+        .col-2
+          input.btn.btn-large.custom-large.btn-secondary(type='button' onClick="appendNumber(2)", value="2")
+        .col-2
+          input.btn.btn-large.custom-large.btn-secondary(type='button' onClick="appendNumber(3)", value="3")
+      .row.padded-row
+        .col-2.offset-1
+          input.btn.btn-large.custom-large.btn-secondary(type='button' onClick="appendNumber(4)", value="4")
+        .col-2
+          input.btn.btn-large.custom-large.btn-secondary(type='button' onClick="appendNumber(5)", value="5")
+        .col-2
+          input.btn.btn-large.custom-large.btn-secondary(type='button' onClick="appendNumber(6)", value="6")
+      .row.padded-row
+        .col-2.offset-1
+          input.btn.btn-large.custom-large.btn-secondary(type='button' onClick="appendNumber(7)", value="7")
+        .col-2
+          input.btn.btn-large.custom-large.btn-secondary(type='button' onClick="appendNumber(8)", value="8")
+        .col-2
+          input.btn.btn-large.custom-large.btn-secondary(type='button' onClick="appendNumber(9)", value="9")
+      .row.padded-row
+        .col-2.offset-3
+          input.btn.btn-large.custom-large.btn-secondary(type='button' onClick="appendNumber(0)", value="0")
+        .col-2
+          input.btn.btn-large.custom-large.btn-warning(type='button' onClick="removeNumber()", value="<")
+
+
+  include ./partials/scripts.pug

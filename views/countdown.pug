@@ -1,0 +1,8 @@
+extends partials/layout.pug
+
+block content
+  .container
+    h1#counter
+  include ./partials/scripts.pug
+  script.
+    countdownTimer()
