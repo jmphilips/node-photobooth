@@ -3,7 +3,7 @@
 const PiCamera = require('pi-camera');
 const myCamera = new PiCamera({
   mode: 'photo',
-  output: `${ __dirname }/test.jpg`,
+  output: `test.jpg`,
   width: 400,
   height: 400,
   nopreview: true,
