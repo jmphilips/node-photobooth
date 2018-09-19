@@ -8,7 +8,7 @@ module.exports.index = (req, res) => {
     if(count === 0) {
       clearInterval(myTimer);
     }
-    createCamera().snap()
+    createCamera(count).snap()
       .then(_ => console.log('photo taken!'))
       .catch(err => console.log(err))
     count -= 1;
