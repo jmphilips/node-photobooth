@@ -4,7 +4,7 @@ const PiCamera = require('pi-camera');
 
 module.exports.index = (req, res) => {
   const myCamera = createCamera();
-  count = 4;
+  let count = 4;
   const myTimer = setInterval(() => {
     if(count === 0) {
       clearInterval(myTimer);
