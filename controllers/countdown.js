@@ -3,23 +3,23 @@
 const PiCamera = require('pi-camera');
 
 module.exports.index = (req, res) => {
-  const myCamera = createCamera();
   let count = 4;
   const myTimer = setInterval(() => {
     if(count === 0) {
       clearInterval(myTimer);
     }
-    myCamera.snap()
+    createCamera().snap()
       .then(_ => console.log('photo taken!'))
+      .catch(err => console.log(err))
     count -= 1;
   }, 5000)
   res.render('countdown');
 };
 
-const createCamera = () => {
+const createCamera = (count) => {
   return new PiCamera({
     mode: 'photo',
-    output: `test.jpg`,
+    output: `test_${count}.jpg`,
     width: 400,
     height: 400,
     nopreview: true,
