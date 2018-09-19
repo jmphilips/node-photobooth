@@ -10,11 +10,8 @@ module.exports.index = (req, res) => {
       clearInterval(myTimer);
     }
     createCamera(count)
-      .takePhoto()
-      .then(photo => {
-        console.log('photo taken!');
-        console.log(photo);
-      })
+      .timelapse('image%04d', 5000, 2000)
+      .then(image => console.log(`image taken ${image}`))
       .catch(err => console.log(err));
     count -= 1;
   }, 5000);
@@ -25,6 +22,5 @@ const createCamera = () => {
   return new Raspistill({
     height: 400,
     width: 400,
-    time: 0
   });
 };
