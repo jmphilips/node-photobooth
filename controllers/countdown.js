@@ -24,6 +24,7 @@ module.exports.index = (req, res) => {
 const createCamera = () => {
   return new Raspistill({
     height: 400,
-    width: 400
+    width: 400,
+    time: 0
   });
 };
