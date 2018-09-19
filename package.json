@@ -14,6 +14,7 @@
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.3",
     "node-raspistill": "0.0.15",
+    "pi-camera": "^1.2.1",
     "pug": "^2.0.3",
     "request": "^2.88.0",
     "requirejs": "^2.3.6"
