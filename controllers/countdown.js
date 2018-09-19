@@ -1,27 +1,29 @@
 'use strict';
 
-const PiCamera = require('pi-camera');
+const { Raspistill } = require('node-raspistill');
 
 module.exports.index = (req, res) => {
   let count = 4;
+  const myCamera = createCamera();
   const myTimer = setInterval(() => {
-    if(count === 0) {
+    if (count === 0) {
       clearInterval(myTimer);
     }
-    createCamera(count).snap()
-      .then(_ => console.log('photo taken!'))
-      .catch(err => console.log(err))
+    createCamera(count)
+      .takePhoto()
+      .then(photo => {
+        console.log('photo taken!');
+        console.log(photo);
+      })
+      .catch(err => console.log(err));
     count -= 1;
-  }, 5000)
+  }, 5000);
   res.render('countdown');
 };
 
-const createCamera = (count) => {
-  return new PiCamera({
-    mode: 'photo',
-    output: `test_${count}.jpg`,
-    width: 400,
+const createCamera = () => {
+  return new Raspistill({
     height: 400,
-    nopreview: true,
-  })
+    width: 400
+  });
 };
