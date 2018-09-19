@@ -20,9 +20,6 @@ const removeCounter = () => {
 const setTimeHeading = i => {
   let heading = retrieveElById('counter');
   if (i === 0) {
-    fetch('http://localhost:3000/snap', {
-      method: 'get'
-    }).then(_ => console.log('cool'))
     heading.innerHTML = '&#128247;';
   } else {
     heading.innerHTML = i;
